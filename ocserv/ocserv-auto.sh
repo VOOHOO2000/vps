@@ -42,8 +42,7 @@ function ConfigEnvironmentVariable {
     # 服务器的证书和key文件，放在本脚本的同目录下，key文件的权限应该是600或者400
     servercert=${1-server-cert.pem}
     serverkey=${2-server-key.pem}
-    clientcert=${ca-cert.pem}
-    # VPN 内网 IP 段
+     # VPN 内网 IP 段
     vpnnetwork="192.168.8.0/21"
     # DNS
     dns1="8.8.8.8"
@@ -573,7 +572,7 @@ _EOF_
     fi
 
     # 复制证书
-    cp "${clientcert}" /etc/pki/ocserv/cacerts/ca-cert.pem
+    cp ca-cert.pem /etc/pki/ocserv/cacerts/ca-cert.pem
 }
 
 function PrintResult {
